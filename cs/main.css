@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding:  20px;
+}
+
+h1{
+    margin-top: 0;
+    padding-top: 20px;
+    color: #eeeeee;
+    line-height: 0.9em;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 6px ;
+    font-size: 50px;
+}
+
+.todos {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    padding: 50px;
+    padding-top: 0;
+    text-align: center;
+    margin: 0 auto;
+    background: linear-gradient(0deg, #000, #262626);
+}
+
+.todos::before,
+.todos::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: animate 30s linear infinite;
+    }
+
+.todos::after {
+    filter: blur(20px);
+}
+
+@keyframes animate {
+
+0%,
+100% {
+    background-position: 0 0;
+}
+
+50% {
+    background-position: 300% 0;
+}
+
+}
+
+.form{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.input{
+    max-width: 300px;
+    margin-right: 20px;
+    width: 100%;
+    padding: 5px 10px;
+    border: none;
+    box-shadow: 0 0 0 2px rgb(131, 128, 128);
+    border-radius: 20px;
+    font-size:20px;
+}
+
+.button{
+    max-width: 100px;
+    width: 100%;
+    padding: 5px;
+    min-width: none;
+    border-radius: 20px;
+    box-shadow: 0 0 0 2px rgb(131, 128, 128);
+    background-color: aqua;
+    border:none;
+}
+
+
+.todos__list{
+    margin: 0;
+    padding: 0;
+}
+
+.todos__item{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    margin-top: 20px;
+    border-bottom: 2px solid rgb(172, 169, 169);
+    padding-bottom: 20px;
+}
+
+.todos__input{
+    vertical-align: middle;
+    margin: auto 0;
+}
+
+.todos__item__text{
+    font-size:25px;
+    color: #fff;
+}
+
+.todos__button{
+    background-color: red;
+    color: #fff;
+    max-width: 100px;
+    border: 1px solid rgb(107, 106, 106);
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+
+
+@media only screen and (max-width:425px){
+    form{
+        flex-direction: column;
+    }
+
+    form .input{
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+
+    form button{
+        margin: 0 auto;
+
+    }
+
+    .todos__button{
+        padding: 5px 10px;
+    }
+    .todos__item{
+        padding-bottom: 10px;
+    }
+
+    .todos__item__text{
+        font-size: 20px;
+    }
+}
